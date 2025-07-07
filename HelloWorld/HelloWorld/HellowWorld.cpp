@@ -28,7 +28,17 @@ int main() // 메인 함수. 시작을 알리는 함수
 	Apple = gg;
 	gg = 59;
 	gg = a * _b;
+	
+	/*
+	사칙연산의 종류
+	덧샘 +
+	뺄샘 -
+	곱셈 *
+	나눗셈 /
+	*/
+
 	printf("\n%d", gg); // %d는 변수값을 출력할때 쓰는 문자
+	printf("\napple 값은 %d이고 Apple 값은 %d입니다", apple, Apple); // 동시에 두개의 변수값을 출력 시 다음과 같이 작성이 가능하다
 
 	return 0;
 }
