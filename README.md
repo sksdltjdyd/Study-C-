@@ -1,1 +1,3 @@
-# Study-C-
+# Study C++
+
+Study C & C++
