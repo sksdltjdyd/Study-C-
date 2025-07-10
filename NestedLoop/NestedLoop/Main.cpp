@@ -22,7 +22,7 @@ int main() {
 		printf("반복문의 마지막입니다\n");
 	}
 
-	printf("프로그램을 종료합니다");
+	printf("프로그램을 종료합니다/n");
 
 	/*
 	중첩된 반복문
@@ -31,10 +31,17 @@ int main() {
 
 	for(조건){
 		for(조건){
-		
+
 		...}
 	}
 	*/
+
+	for (int i = 0; i < 5; i++) {
+		for (int k = 0; k < k; k++) {
+			printf("*");
+		}
+		printf("\n");
+	}
 
 	return 0;
 }
