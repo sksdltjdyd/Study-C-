@@ -1,41 +1,5 @@
 #include "Header.h"
 
-float inputValue() {
-	float value;
-	printf("Enter a value: ");
-	fseek(stdin, 0, SEEK_END);
-	scanf_s("%f", &value);
-	return value;
-}
-
-float add(float a, float b){
-	return a + b;
-}
-
-float sub(float a, float b) {
-	return a - b;	
-}
-
-float mul(float a, float b) {
-	return a * b;
-}
-
-float div(float a, float b) {
-	return a / b;
-}
-
-float mod(float a, float b) {
-	return (int)a % (int)b;
-}
-
-char getoper() {
-	char oper;
-	printf("Enter an operator (+, -, *, /, %%): ");
-	fseek(stdin, 0, SEEK_END);
-	scanf_s(" %c", &oper, 1);
-	return oper;
-}
-
 int main() {
 	float value1 = inputValue();
 	float value2 = inputValue();
@@ -82,8 +46,41 @@ int main() {
 	else {
 		printf("Calculation failed due to invalid input.\n");
 	}
-	
-
-
 	return 0;
+}
+
+float inputValue() {
+	float value;
+	printf("Enter a value: ");
+	fseek(stdin, 0, SEEK_END);
+	scanf_s("%f", &value);
+	return value;
+}
+
+float add(float a, float b) {
+	return a + b;
+}
+
+float sub(float a, float b) {
+	return a - b;
+}
+
+float mul(float a, float b) {
+	return a * b;
+}
+
+float div(float a, float b) {
+	return a / b;
+}
+
+float mod(float a, float b) {
+	return (int)a % (int)b;
+}
+
+char getoper() {
+	char oper;
+	printf("Enter an operator (+, -, *, /, %%): ");
+	fseek(stdin, 0, SEEK_END);
+	scanf_s(" %c", &oper, 1);
+	return oper;
 }
