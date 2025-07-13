@@ -18,3 +18,5 @@ float div(float a, float b);
 float mod(float a, float b);
 
 char getoper();
+
+char getWord();
