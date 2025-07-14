@@ -30,5 +30,7 @@ int main() {
 	printf("pName의 주소 : %p\n", (void*)&pName); // pName의 주소를 출력한다. %p는 포인터 주소를 출력하는 형식 지정자이다
 	printf("name의 값 : %d\n", name); // name의 값을 출력한다
 
+
+
 	return 0;
 }
