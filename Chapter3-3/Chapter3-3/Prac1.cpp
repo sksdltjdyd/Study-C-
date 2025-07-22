@@ -1,9 +1,10 @@
 #include "Header.h"
 
-int Number = 1;
+
 
 class Employee {
 public:
+	int countNum = 1;
 	int no;
 	char name[20];
 	int gender;
@@ -13,8 +14,8 @@ public:
 		strcpy(this->name, name);
 		this->gender = gender;
 		strcpy(this->rank, rank);
-		this->no = Number;
-		Number++;
+		this->no = countNum;
+		countNum++;
 	}
 
 	void PrintInfo()
@@ -42,7 +43,6 @@ char* GetChar(const char* Prompt) {
 	printf("%s", Prompt);
 	fseek(stdin, 0, SEEK_END);
 	scanf("99[^\n]s", input);
-
 	return input;
 
 }
@@ -86,7 +86,24 @@ int main() {
 		}
 		else if (input == 3)
 		{
-
+			int number = GetInt("사원 번호를 입력해주세요 : ");
+			int deleteindex = -1;
+			for (int = 0; i < count; i++)
+			{
+				if (number == employee[i]->no) {
+					delete employee[i];
+					deleteindex = i;
+				}
+			}
+			if (deleteindex >= 0)
+			{
+				for (int i = deleteindex; i < count - 1; i++)
+				{
+					employee[i] = employee[i + 1];
+				}
+			}
+			count--;
+			printf("삭제가 완료됐습니다");
 		}
 		else if (input == 4)
 		{
