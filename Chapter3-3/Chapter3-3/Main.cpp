@@ -28,6 +28,7 @@ public:
 		// this 키워드는 자기자신의 인스턴스(포인터타입)을 가져올 수 있다. 클래스 멤버함수를 호출하기 위해서는 호출한 주체인 어떤 클래스 인스턴스가 존재하는데 그 호출 주체가 this이다
 		this->student_no = student_no; 
 		this->name = new char[strlen(name) + 1]; //파라미터로 문자열을 입력받아 문자열의 길이를 반환
+		strcpy(this -> name, name);
 		this->gender = gender;
 
 	}
@@ -46,7 +47,7 @@ public:
 	~Student()
 	{
 		delete[] name; // 메모리에 동적 할당된 데이터를 삭제 해주는 키워드. free()와 개념이 같다
-		printf("%s의 소멸자 호출\n", name);
+		printf("%d의 소멸자 호출을 완료했습니다\n", student_no);
 	}
 	
 
@@ -68,6 +69,8 @@ int main() {
 
 	Student* ps = new Student(78910, "이새아", 0);
 	ps->PrintStudentInfo();
+
+	delete ps;
 	/*
 	클래스 인스턴스간 차이
 	- new 키워드를 이용해 클래스를 만들게 되면 클래스의 실제 값이 Heap영역에 저장되는것이 큰 차이이다
