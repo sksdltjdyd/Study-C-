@@ -1,14 +1,19 @@
 #include "Header.h"
-#define INTERVAL 1.0 / 60.0 // 60프레임으로 만들기 위해 인터벌을 1/60초로 설정
+
+// 60프레임으로 만들기 위해 인터벌을 1/60초로 설정. 0.017초
+#define INTERVAL
 
 int main() {
 
 	srand(time(0));
+
 	// 게임이 실행된 이후 지나는 시간을 지속적으로 체크
 	float prev = (float)clock() / CLOCKS_PER_SEC;
 
 	// 게임 화면 출력
 	Display* display = new Display();
+
+	// 커서를 지우는 명령어
 	showConsoleCursor(false);
 
 
@@ -31,29 +36,32 @@ int main() {
 		bool right = keyState('d');
 		bool down = keyState('s');
 		bool rotate = keyState('w');
-		if (left == true) 
+		if (left == true)
 		{
 			// 왼쪽으로 블록 이동
 			gameengine->next(dt, 'a');
 		}
 		else if (right == true) {
+			// 오른쪽으로 블록 이동
 			gameengine->next(dt, 'd');
 		}
 		else if (down == true) {
+			// 블록 아래로 이동
 			gameengine->next(dt, 's');
 		}
 		else if (rotate == true) {
+			// 블록 회전
 			gameengine->next(dt, 'w');
 		}
-		else 
+		else
 		{
 			// 블록 떨어짐
 			gameengine->next(dt, 0);
 		}
 
-		
 
-		
+
+
 
 		// 화면 출력
 		gameengine->makedisplaydata();
@@ -61,7 +69,7 @@ int main() {
 
 		// 게임 상태 판별
 		if (gameengine->state == GameEngine::GameState::GAMEOVER) break;
-		
+
 	}
 
 	return 0;
