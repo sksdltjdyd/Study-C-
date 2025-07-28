@@ -1,10 +1,10 @@
 #include "Header.h"
 
 // 60프레임으로 만들기 위해 인터벌을 1/60초로 설정. 0.017초
-#define INTERVAL
+#define INTERVAL 1.0 / 60.0
 
 int main() {
-
+	// 랜덤 블록을 생성하기 위해 랜덤 설정
 	srand(time(0));
 
 	// 게임이 실행된 이후 지나는 시간을 지속적으로 체크
@@ -19,6 +19,7 @@ int main() {
 
 	// 게임 엔진을 불러와서 관리
 	GameEngine* gameengine = new GameEngine();
+	// 게임 초기화 설정
 	gameengine->init();
 
 	while (true)
