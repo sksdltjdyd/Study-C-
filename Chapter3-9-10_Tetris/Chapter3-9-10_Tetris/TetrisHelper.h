@@ -23,6 +23,7 @@ void showConsoleCursor(bool showFlag) {
 	SetConsoleCursorInfo(out, &cursorInfo);
 }
 
+// 참, 거짓에 따라 그리는 그림 설정
 void drawPosition(int x, int y, bool filled) {
 	putStringOnPosition(x * 2, y, filled ? "■" : "□");
 }
