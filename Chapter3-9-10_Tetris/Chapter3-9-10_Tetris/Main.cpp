@@ -1,9 +1,15 @@
 #include "Header.h"
+#include "Display.h"
+#include "GameEngine.h"
 
 // 60프레임으로 만들기 위해 인터벌을 1/60초로 설정. 0.017초
 #define INTERVAL 1.0 / 60.0
 
+// 게임 실행시 화면에 뜨는 게임 화면 크기 설정
+int displayData[GRID_HEIGHT][GRID_WIDTH] = { 0, };
+
 int main() {
+
 	// 랜덤 블록을 생성하기 위해 랜덤 설정
 	srand(time(0));
 
