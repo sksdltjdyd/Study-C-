@@ -1,8 +1,8 @@
 #include "GameEngine.h"
 
+// 최초 게임 엔진 초기화 과정
 void GameEngine::init()
 {
-	// 최초 게임 엔진 초기화 과정
 	makeuserblock();
 }
 
