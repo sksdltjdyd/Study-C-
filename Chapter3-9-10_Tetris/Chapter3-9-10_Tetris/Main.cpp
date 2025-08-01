@@ -2,6 +2,7 @@
 #include "Display.h"
 #include "GameEngine.h"
 
+
 // 60프레임으로 만들기 위해 인터벌을 1/60초로 설정. 0.017초
 #define INTERVAL 1.0 / 60.0
 
