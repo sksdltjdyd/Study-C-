@@ -75,6 +75,7 @@ STL 선언과 정의 분리
 */
 template <typename T>
 class Myarray {
+// 협업 시 바꾸기 싫은 변수를 접근 불가능하게 설정
 private:
 	T* arritem; // 배열 포인터
 	int count = 0;
@@ -90,7 +91,7 @@ public:
 		delete[] arritem;
 	}
 
-	void putvalue(T value) {
+	void putvalue(const T& value) {
 
 		if (capacity <=count)
 		{
@@ -118,8 +119,26 @@ public:
 		return arritem[index];
 	}
 	
-	void Contains(T value) {
+	bool contains(T value) {
+		for (int i = 0; i < count; i++)
+		{
+			if (value == arritem[i]) return true;
+		}
+		return false;
+	}
+	void replace(int index, T value) {
+		if (index < count) {
+			arritem[index] = value;
+		}
+	}
 
+	void erase(int index) {
+		for (int i = index; i < count-1; i++)
+		{
+			arritem[i] = arritem[i + 1];
+		}
+		count--;
+		
 	}
 };
 
